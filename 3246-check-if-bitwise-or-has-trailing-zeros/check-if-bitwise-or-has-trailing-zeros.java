@@ -1,7 +1,7 @@
 class Solution {
     public boolean hasTrailingZeros(int[] nums) {
-        int n=nums.length;
-        int ans=0,idx=0;
+         int n=nums.length;
+        int ans=0;
         List<Integer> num=new ArrayList<>();
         for(int i=0;i<n;i++){
             if(nums[i] % 2 == 0){
@@ -18,6 +18,5 @@ class Solution {
             }
         }
         return false;
-        
     }
 }
