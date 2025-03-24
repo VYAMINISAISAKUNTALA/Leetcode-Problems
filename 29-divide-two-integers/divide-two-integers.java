@@ -10,7 +10,7 @@ class Solution {
         long dr = Math.abs((long) divisor);
 
         for(int i=31;i>=0;i--){
-            if((dd >> i) >= dr){
+            if((dr << i) <= dd){
                 dd-=(dr << i);
                 ans+= (1 << i);
             }
