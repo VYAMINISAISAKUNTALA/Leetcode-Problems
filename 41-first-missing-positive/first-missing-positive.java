@@ -1,8 +1,8 @@
 class Solution {
     public int firstMissingPositive(int[] nums) {
-        if(nums.length == 1 && nums[0] < 0){
-            return 1;
-        }
+        // if(nums.length == 1 && nums[0] < 0){
+        //     return 1;
+        // }
 
         HashMap<Long,Long> hm=new HashMap<>();
         long max=Long.MIN_VALUE;
