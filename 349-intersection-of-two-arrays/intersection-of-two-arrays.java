@@ -8,8 +8,9 @@ class Solution {
             hm.put(num, hm.getOrDefault(num,0)+1);
         }
         for(int i=0;i<nums2.length;i++){
-            if(hm.containsKey(nums2[i]) && !(list.contains(nums2[i]))){
+            if(hm.containsKey(nums2[i])){
                 list.add(nums2[i]);
+                hm.remove(nums2[i]);
             }
         }
         int[] result=new int[list.size()];
