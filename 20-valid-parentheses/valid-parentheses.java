@@ -3,7 +3,7 @@ class Solution {
         
         int len = s.length();
 
-        if(len == 1) return false;
+        if(len % 2!=0) return false;
 
         Stack<Character> stk= new Stack();
 
