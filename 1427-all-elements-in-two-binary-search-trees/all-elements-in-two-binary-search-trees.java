@@ -15,27 +15,23 @@
  */
 class Solution {
 
-    public List<Integer> inOrderTraversal(TreeNode root){
+    public void inOrderTraversal(TreeNode node,List<Integer> list){
 
-         List<Integer> resultList = new ArrayList<>();
-         inOrderHelper(root, resultList);
-         return resultList;
-
-    }
-
-    private void inOrderHelper(TreeNode node, List<Integer> list) {
         if (node == null) return;
 
-        inOrderHelper(node.left, list);
+        inOrderTraversal(node.left, list);
         list.add(node.val);
-        inOrderHelper(node.right, list);
+        inOrderTraversal(node.right, list);   
     }
+
 
     public List<Integer> getAllElements(TreeNode root1, TreeNode root2) {
 
         List<Integer> resultList= new ArrayList<>();
-        List<Integer> list1= inOrderTraversal(root1);
-        List<Integer> list2 = inOrderTraversal(root2);
+        List<Integer> list1=new ArrayList<>();;
+        inOrderTraversal(root1,list1);
+        List<Integer> list2=new ArrayList<>();;
+        inOrderTraversal(root2,list2);
 
         int list1Pointer = 0, list2Pointer=0;
         int n1 = list1.size(), n2 = list2.size();
@@ -57,8 +53,5 @@ class Solution {
             resultList.add(list2.get(list2Pointer++));
         }
         return resultList;
-
-        
-        
     }
 }
