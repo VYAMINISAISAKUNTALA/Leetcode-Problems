@@ -24,15 +24,27 @@ class Solution {
     public boolean findTarget(TreeNode root, int k) {
         if(root == null) return false;
 
+
         List<Integer> result = new ArrayList<>();
         inOrderTraversal(root, result);
-        HashMap<Integer,Integer> hm= new HashMap<>();
-        for(int i: result){
-            if(hm.containsKey(k-i)){
-                return true;
-            }
-            hm.put(i, Math.abs(i-k));
+
+        int left=0, right= result.size()-1;
+
+        while(left < right){
+            int sum = result.get(left) + result.get(right);    
+            if(sum == k) return true;
+            else if(sum < k) left++;
+            else if(sum > k) right--;
         }
+
+
+        // HashMap<Integer,Integer> hm= new HashMap<>();
+        // for(int i: result){
+        //     if(hm.containsKey(k-i)){
+        //         return true;
+        //     }
+        //     hm.put(i, Math.abs(i-k));
+        // }
         
         return false;
     }
