@@ -15,13 +15,6 @@
  */
 class Solution {
 
-    public void swap(TreeNode left, TreeNode right){
-        TreeNode temp=null;
-        temp.val=left.val;
-        left.val=right.val;
-        right.val=temp.val;
-    }
-
     public TreeNode invertTree(TreeNode root) {
         if(root == null) return null;
         TreeNode leftSubTree = invertTree(root.left);
@@ -29,9 +22,6 @@ class Solution {
 
         root.left= rightSubTree;
         root.right = leftSubTree;
-
-        //swap(address1,address2);
-
         return root;
     }
 }
