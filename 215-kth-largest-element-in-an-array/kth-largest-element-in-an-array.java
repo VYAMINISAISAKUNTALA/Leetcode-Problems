@@ -11,9 +11,6 @@ class Solution {
                 kThLargestElement.add(num);
             }
         }
-        // if(kThLargestElement.size()!=0){
-        //     return kThLargestElement.peek();
-        // }
 
         return kThLargestElement.peek();
 
