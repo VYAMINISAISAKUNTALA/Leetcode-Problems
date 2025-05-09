@@ -5,7 +5,6 @@ class Solution {
         for(int num:nums){
             if(kThLargestElement.size() < k){
                 kThLargestElement.add(num);
-                //size++;
             }
             else if(kThLargestElement.peek() < num){
                 kThLargestElement.poll();
