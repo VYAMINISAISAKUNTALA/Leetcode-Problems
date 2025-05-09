@@ -7,6 +7,9 @@ class Solution {
         }
         int i=0;
         while(i < k){
+            if(pq.peek() == 0){
+                break;
+            }
             int val= pq.peek() * -1;
             pq.poll();
             pq.add(val);
