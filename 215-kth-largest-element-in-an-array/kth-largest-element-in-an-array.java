@@ -11,11 +11,11 @@ class Solution {
                 kThLargestElement.add(num);
             }
         }
-        if(kThLargestElement.size()!=0){
-            return kThLargestElement.peek();
-        }
+        // if(kThLargestElement.size()!=0){
+        //     return kThLargestElement.peek();
+        // }
 
-        return 0;
+        return kThLargestElement.peek();
 
     }
 }
