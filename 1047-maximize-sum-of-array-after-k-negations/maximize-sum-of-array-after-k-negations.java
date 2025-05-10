@@ -5,8 +5,9 @@ class Solution {
         for(int num:nums){
             pq.add(num);
         }
+    
         int i=0;
-        while(i < k){
+        while(i<k){
             if(pq.peek() == 0){
                 break;
             }
@@ -14,6 +15,8 @@ class Solution {
             pq.poll();
             pq.add(val);
             i++;
+
+
         }
         
         for(int num:pq){
