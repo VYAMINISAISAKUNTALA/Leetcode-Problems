@@ -2,10 +2,6 @@ class Solution {
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         
         int n = arr.length;
-        if(n == 1 && arr[0] == 1){
-            return new ArrayList<>(List.of(1));
-        }
-
         List<Integer> list = new ArrayList<>();
         int left = 0;
         int right = n-1;
