@@ -1,34 +1,35 @@
 class Solution {
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
-        int numLength=arr.length;
-        int leftPointer=0, rightPointer=numLength-1;
-
-        if(numLength == 1 && (arr[0] <= x || arr[0] >= x)){
-            return new ArrayList<>(Arrays.asList(1));
+        
+        int n = arr.length;
+        if(n == 1 && arr[0] == 1){
+            return new ArrayList<>(List.of(1));
         }
-        List<Integer> list=new ArrayList<>();
 
-        if(numLength == k){
-            for (int num : arr) {
-                list.add(num);
+        List<Integer> list = new ArrayList<>();
+        int left = 0;
+        int right = n-1;
+
+        
+        while(left < right){
+
+            int leftDiff = Math.abs(arr[left] - x);
+            int rightDiff = Math.abs(arr[right] - x);
+            
+            if(right - left == k - 1) break;
+
+            if(leftDiff > rightDiff){
+                left++;
+            }else{
+                right--;
             }
-            return list;
+            
         }
-        while (leftPointer < rightPointer){
 
-            int leftNo = Math.abs(arr[leftPointer] - x);
-            int rightNo= Math.abs(arr[rightPointer] - x);
-            if(rightPointer - leftPointer == k-1) break;
-            if(leftNo > rightNo){
-                leftPointer++;
-            }else {
-                rightPointer--;
-            }
-        }
-        System.out.println(leftPointer+"-"+rightPointer);
-        for(int i=leftPointer;i<=rightPointer;i++){
+        for(int i=left;i<=right;i++){
             list.add(arr[i]);
         }
         return list;
+        
     }
 }
