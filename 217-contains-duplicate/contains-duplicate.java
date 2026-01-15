@@ -5,14 +5,15 @@ class Solution {
 
         HashMap<Integer,Integer> hm = new HashMap<>();
 
-        for(int num : nums){
-            hm.put(num, hm.getOrDefault(num,0)+1);
-        }
+        // for(int num : nums){
+        // }
 
         for(int num:nums){
-            if(hm.containsKey(num) && hm.get(num) >=2){
+            if(hm.containsKey(num)){
                 return true;
             }
+            hm.put(num, hm.getOrDefault(num,0)+1);
+
         }
         return false;
     }
